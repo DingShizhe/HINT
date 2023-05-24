@@ -1,4 +1,4 @@
-# Code implementation of the HINT
+# Code implementation of HINT
 
 Code implementation of the paper _Accurate Interpolation for Scattered Data through Hierarchical Residual Refinement_.
 
