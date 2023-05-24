@@ -1,6 +1,6 @@
-## Source Code of HINT
+# Code implementation of the HINT
 
-_Accurate Interpolation for Scattered Data through Hierarchical Residual Refinement_
+Code implementation of the paper _Accurate Interpolation for Scattered Data through Hierarchical Residual Refinement_.
 
 The implementation of this work is built upon the foundations of three existing projects: [NIERT](https://github.com/DingShizhe/NIERT), [NeuralSymbolicRegressionThatScales](https://github.com/SymposiumOrganization/NeuralSymbolicRegressionThatScales) and [TFR-HSS-Benchmark](https://github.com/shendu-sw/TFR-HSS-Benchmark).
 
