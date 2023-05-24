@@ -1,0 +1,42 @@
+model_name: HINT
+dataset_type: PTV
+
+# dataset path
+data_root: path_to_PTV_denoised
+cfg_dim_input: 4
+cfg_dim_output: 2
+
+# train/val set
+train_path: train/train_val.txt
+
+# test set
+test_path: 
+
+
+wandb_project: tfr_PTV_tb_logs
+checkpoint_dir: TFR/PTV/HINT
+
+observed_as_target: True
+align_observed: 
+
+batch_size: 4   # train
+# batch_size: 32   # test
+max_epochs: 100
+lr: 0.0005
+lr_decay: 0.97
+gradient_clip: 0.005
+
+model_arch_cfg:
+  layers: 2
+  dim_hidden: 128
+  dim_inner: 128
+  num_heads: 4
+  K_0_inv: 4
+  K_min_inv: 8
+  K_min: -1
+  n_blocks: 4
+
+gpu: 1 # 0 cpu, 1 gpu:0, 2 gpu:1
+val_check_interval: 1.0
+
+num_workers: 8

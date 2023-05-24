@@ -1,0 +1,46 @@
+model_name: HINT
+
+dataset_type: Perlin
+cfg_dim_input: 3
+cfg_dim_output:
+
+# dataset path
+data_root: ""
+train_path: ""
+test_path: ""
+
+
+wandb_project: Perlin_tb_logs
+checkpoint_dir: Perlin/HINT
+
+
+observed_as_target: True
+align_observed: 
+
+o_loss_coff: 0.1
+gradient_clip: 0.1
+
+batch_size: 128
+max_epochs: 100
+lr: 0.0001
+lr_decay:
+gradient_clip: 0.1
+
+# which gpu to use
+gpu: 1
+
+val_check_interval: 1.0
+
+# num_workers in dataloader
+num_workers: 16
+# num_workers: 0
+
+model_arch_cfg:
+  layers: 2
+  dim_hidden: 128
+  dim_inner: 128
+  num_heads: 8
+  K_0_inv: 1
+  K_min_inv: 0
+  K_min: 8
+  n_blocks: 4

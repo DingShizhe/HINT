@@ -1,0 +1,116 @@
+# model_name: NIERT
+model_name: HINT
+# model_name: TransformerRecon
+# model_name: ConditionalNeuralProcess
+# model_name: AttentiveNeuralProcess
+
+dataset_type: Mathit
+cfg_dim_input: 3
+cfg_dim_output:
+
+# dataset path
+data_root: path_to_mathit_mathit_data
+train_path: datasets/1000000
+test_path: raw_datasets/150
+
+
+
+wandb_project: Mathit_tb_logs
+# checkpoint_dir: Mathit/HINT_3_422_0.05OLoss_Clip0.05
+# checkpoint_dir: Mathit/HINT_3_442_0.05OLoss_Clip0.1
+checkpoint_dir: Mathit/HINT_2_62_0.05OLoss_Clip0.05_KNN
+
+observed_as_target: True
+# observed_as_target: 
+# align_observed: True
+# observed_as_target: 
+align_observed: 
+
+
+# batch_size: 128
+# batch_size: 128
+# batch_size: 160
+# batch_size: 64
+batch_size: 128
+# batch_size: 256
+# max_epochs: 100
+max_epochs: 160
+lr: 0.0001
+lr_decay:
+gradient_clip: 0.05
+
+
+# which gpu to use
+# gpu: 3
+gpu: 1
+
+val_check_interval: 1.0
+
+# num_workers in dataloader
+num_workers: 32
+
+model_arch_cfg:
+  layers: 6
+  dim_hidden: 512
+  dim_inner: 512
+  num_heads: 8
+  K_0_inv: 1
+  K_min_inv: 0
+  K_min: 8
+  n_blocks: 2
+
+
+mathit_data_cfg:
+  dataset_train:
+    total_variables: #Do not fill
+    total_coefficients: #Do not fill
+    max_number_of_points: 50  # 1/10
+    type_of_sampling_points: logarithm
+    predict_c: True
+    fun_support:
+      max: 1.0
+      min: -1.0
+    constants:
+      num_constants: 3
+      additive:
+        max: 2
+        min: -2
+      multiplicative:
+        max: 2
+        min: -2
+
+  dataset_val:
+    total_variables: #Do not fill
+    total_coefficients: #Do not fill
+    max_number_of_points: 50
+    type_of_sampling_points: logarithm
+    predict_c: True
+    fun_support:
+      max: 1.0
+      min: -1.0
+    constants:
+      num_constants: 3
+      additive:
+        max: 2
+        min: -2
+      multiplicative:
+        max: 5
+        min: 0.1
+
+  dataset_test:
+    total_variables: #Do not fill
+    total_coefficients: #Do not fill
+    max_number_of_points: 50
+    type_of_sampling_points: logarithm
+    predict_c: True
+    fun_support:
+      max: 1.0
+      min: -1.0
+    constants:
+      num_constants: 3
+      additive:
+        max: 2
+        min: -2
+      multiplicative:
+        max: 5
+        min: 0.1

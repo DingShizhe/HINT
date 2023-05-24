@@ -1,0 +1,52 @@
+model_name: HINT
+
+dataset_type: TFR
+
+# dataset path
+data_root: path_to_TFRD_ADlet
+cfg_dim_input: 3
+cfg_dim_output:
+
+# train/val set
+train_path: train/train_val.txt
+
+# test set
+test_path: test/test_0.txt
+
+
+wandb_project: tfr_adlet_tb_logs
+checkpoint_dir: TFR/ADlet/HINT
+
+o_loss_coff: 0.5
+
+observed_as_target: True
+align_observed: 
+
+
+batch_size: 5   # train
+max_epochs: 100
+lr: 0.0005
+lr_decay: 0.97
+gradient_clip: 0.1
+
+
+model_arch_cfg:
+  layers: 2
+  dim_hidden: 128
+  dim_inner: 512
+  num_heads: 4
+  K_0_inv: 1
+  K_min_inv: 0
+  K_min: 8
+  n_blocks: 4
+
+
+# which gpu to use
+gpu: 1 # 0 cpu, 1 gpu:0, 2 gpu:1
+val_check_interval: 1.0
+
+# num_workers in dataloader
+num_workers: 16
+## input & output
+mean_heat: 298
+std_heat: 50
