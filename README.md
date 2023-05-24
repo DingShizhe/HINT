@@ -78,8 +78,6 @@ CUDA_VISIBLE_DEVICES="0,1" python main.py --config_path ./config/config_PTV.yml
 
 ## Testing
 
-### Mathit-2D
-
 For Mathit dataset, we certainly need to fix a interpolation task test set from the equation skeleton test set.
 
 ```bash
